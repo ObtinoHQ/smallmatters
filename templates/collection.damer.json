@@ -49,14 +49,6 @@
             "enabled": true
           }
         },
-        "block_Rk9rnq": {
-          "type": "block",
-          "settings": {
-            "label": "V-Neck",
-            "link": "shopify://collections/v-neck",
-            "enabled": true
-          }
-        },
         "block_N8mbVz": {
           "type": "block",
           "settings": {
@@ -130,7 +122,6 @@
         "block_DyN6qQ",
         "block_RGm4he",
         "block_NnrRxb",
-        "block_Rk9rnq",
         "block_N8mbVz",
         "block_U9VKYq",
         "block_RHmJxf",
