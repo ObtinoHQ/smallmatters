@@ -65,14 +65,6 @@
             "enabled": true
           }
         },
-        "block_RGm4he": {
-          "type": "block",
-          "settings": {
-            "label": "Nova Cardigan",
-            "link": "shopify://collections/nova-cardigan",
-            "enabled": true
-          }
-        },
         "block_6mXq4Y": {
           "type": "block",
           "settings": {
@@ -100,7 +92,6 @@
         "block_N8mbVz",
         "block_DyN6qQ",
         "block_RHmJxf",
-        "block_RGm4he",
         "block_6mXq4Y",
         "countdown_promo_TLfCYX"
       ],
@@ -109,16 +100,10 @@
         "products_per_page": 36,
         "columns_desktop": 4,
         "color_scheme": "scheme-5",
-        "infinite_progress_text": "Viser varer...",
-        "infinite_btn_text": "Last mer",
-        "infinite_finished_text": "Alle produkter er lastet inn",
-        "infinite_error_text": "Ingen flere sider å laste",
-        "infinite_showing_text": "Viser",
-        "infinite_of_text": "av",
-        "infinite_products_text": "produkter",
-        "infinite": "infinite",
-        "infinite_btn": true,
-        "infinite_progressbar": true,
+        "pagination_style": "load_more",
+        "load_more_text": "Last mer",
+        "load_more_done_text": "Alle produkter er lastet inn",
+        "load_more_count_text": "Viser [shown] av [total] produkter",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
