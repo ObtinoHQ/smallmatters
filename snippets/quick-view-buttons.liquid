@@ -29,7 +29,7 @@
                                   assign option_disabled = false
                                 endif
                               -%}
-                              {% render 'swatch-input', id: input_id, name: input_name, value: value | escape, swatch: value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset %}
+                              {% render 'swatch-input', id: input_id, name: input_name, value: value, swatch: value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset %}
                             {% endif %}
                           {% endfor %}
                         </div>
@@ -98,4 +98,19 @@
                 </div>
               </div>
               <script type="application/json">{{ card_product | json }}</script>
-            </wi-quickadd>
+            </wi-quickadd>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'swatch-input', id: input_id, name: input_name, value: value |
+    escape, swatch: value.swatch, product_form_id: product_form_id, visually_disabled:
+    option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props:
+    input_dataset %}"
+  to: "{% render 'swatch-input', id: input_id, name: input_name, value: value, swatch:
+    value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled,
+    shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset
+    %}"
+  position: 2270..2526
+{%- endcomment -%}

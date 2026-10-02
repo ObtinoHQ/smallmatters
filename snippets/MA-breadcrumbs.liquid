@@ -5,8 +5,8 @@ assign home_title = 'Home'
 assign other_templates = 'blog, cart, list-collections, page, search' | split: ', '
 
 if template.name == 'blog' or template.name == 'page'
-  assign item_title = [template.name].title
-  assign item_url = [template.name].url
+  assign item_title = self[template.name].title
+  assign item_url = self[template.name].url
 elsif template.name == 'list-collections'
   assign item_title = 'Collections'
   assign item_url = routes.collections_url
@@ -229,7 +229,7 @@ endif
         <li class="MA-breadcrumbs__item">
           <a class="MA-breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
         </li>
-{%- when 'collection' and collection.handle -%}
+{%- when 'collection' -%}
   {%- comment -%} 1. Check for Grandparent (Parent of the Parent) {%- endcomment -%}
   {%- assign parent_collection = collection.metafields.custom.parent_collection.value -%}
   {%- assign grandparent_collection = parent_collection.metafields.custom.parent_collection.value -%}
@@ -294,3 +294,19 @@ endif
 </nav>
 {%- endunless -%}
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "  assign item_title = [template.name].title"
+  to: "  assign item_title = self[template.name].title"
+  position: 262..309
+- from: "  assign item_url = [template.name].url"
+  to: "  assign item_url = self[template.name].url"
+  position: 310..353
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 7239..7264
+{% endcomment %}

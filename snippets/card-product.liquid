@@ -177,7 +177,7 @@
                                   assign option_disabled = false
                                 endif
                               -%}
-                              {% render 'swatch-input', id: input_id, name: input_name, value: value | escape, swatch: value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset %}
+                              {% render 'swatch-input', id: input_id, name: input_name, value: value, swatch: value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset %}
                             {% endif %}
                           {% endfor %}
                         </div>
@@ -305,18 +305,7 @@
                           %}
 
                           <div class="custom-swatch-wrapper">
-                            {%
-                              render 'swatch-input',
-                              id: input_id,
-                              name: input_name,
-                              value: value | escape,
-                              swatch: value.swatch,
-                              product_form_id: product_form_id,
-                              visually_disabled: option_disabled,
-                              shape: block.settings.swatch_shape,
-                              help_text: help_text,
-                              additional_props: input_dataset
-                            %}
+                            {% render 'swatch-input', id: input_id, name: input_name, value: value, swatch: value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset %}
                             <span class="swatch-label">{{ value }}</span>
                           </div>
                         {% endif %}
@@ -1025,3 +1014,37 @@
   </div>
 
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'swatch-input', id: input_id, name: input_name, value: value |
+    escape, swatch: value.swatch, product_form_id: product_form_id, visually_disabled:
+    option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props:
+    input_dataset %}"
+  to: "{% render 'swatch-input', id: input_id, name: input_name, value: value, swatch:
+    value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled,
+    shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset
+    %}"
+  position: 9591..9847
+- from: |-
+    {%
+                                  render 'swatch-input',
+                                  id: input_id,
+                                  name: input_name,
+                                  value: value | escape,
+                                  swatch: value.swatch,
+                                  product_form_id: product_form_id,
+                                  visually_disabled: option_disabled,
+                                  shape: block.settings.swatch_shape,
+                                  help_text: help_text,
+                                  additional_props: input_dataset
+                                %}
+  to: "{% render 'swatch-input', id: input_id, name: input_name, value: value, swatch:
+    value.swatch, product_form_id: product_form_id, visually_disabled: option_disabled,
+    shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset
+    %}"
+  position: 19827..20083
+{% endcomment %}
