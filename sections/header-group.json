@@ -20,10 +20,18 @@
             "text": "NATURLIGE FAVORITTER i kashmir, merinoull og overskuddstekstiler.",
             "link": ""
           }
+        },
+        "announcement_t6Jfja": {
+          "type": "announcement",
+          "settings": {
+            "text": "Velkommen til butikken vår",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement_DMyfbJ"
+        "announcement_DMyfbJ",
+        "announcement_t6Jfja"
       ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
