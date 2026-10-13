@@ -14,10 +14,10 @@
       "name": "Hero Banner",
       "settings": {
         "layout_mode": "single",
-        "text_align_x": "flex-start",
+        "text_align_x": "flex-end",
         "text_align_y": "center",
         "subtext_align": "center",
-        "image_left": "shopify://shop_images/19.08_FORSIDE.png",
+        "image_left": "shopify://shop_images/Forside_Oktober_11e1c751-8641-46d9-aa1b-c56e43639301.png",
         "image_right": "shopify://shop_images/Forsidebilde_MOBIL_6a4684bc-4088-467d-b6b4-428176104b66.png",
         "desktop_bg": "#c3a096",
         "desktop_text_color": "#ffffff",
