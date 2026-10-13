@@ -440,9 +440,9 @@
       "settings": {
         "world_link_text": "",
         "world_link_url": "",
-        "transparent_logo": "shopify://shop_images/Smallmatters_gra_kopi_2.png",
+        "transparent_logo": "shopify://shop_images/Hvit_logo_png.png",
         "enable_transparent_header": true,
-        "transparent_header_color": "#a19999",
+        "transparent_header_color": "#FFFFFF",
         "logo_position": "middle-center",
         "mobile_logo_position": "center",
         "menu": "mega-menu",
