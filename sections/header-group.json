@@ -307,7 +307,7 @@
         "desktop_menu_VJfPFP": {
           "type": "desktop_menu",
           "settings": {
-            "trigger": "NYHETER",
+            "trigger": "HØSTEN",
             "title_1": "",
             "title_1_link": "",
             "menu_1": "nyheter",
@@ -450,7 +450,7 @@
         "world_link_url": "",
         "transparent_logo": "shopify://shop_images/Hvit_logo_png.png",
         "enable_transparent_header": true,
-        "transparent_header_color": "#FFFFFF",
+        "transparent_header_color": "#ffffff",
         "logo_position": "middle-center",
         "mobile_logo_position": "center",
         "menu": "mega-menu",
