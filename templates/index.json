@@ -59,7 +59,7 @@
       ],
       "name": "Featured Collection Banner",
       "settings": {
-        "collection": "back-in-stock",
+        "collection": "the-winter-edit",
         "button_bg_color": "rgba(0,0,0,0)",
         "button_text_color": "#1c1d25",
         "button_hover_bg_color": "#d8cfc4",
