@@ -148,6 +148,23 @@ pickup-availability-drawer[open] {
   margin: 0;
 }
 
+.pickup-availability-opening-hours {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+}
+
+.pickup-availability-closed-notice {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+}
+
+.pickup-availability-list__item .pickup-availability-closed-notice {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
 @keyframes animateDrawerOpen {
   @media screen and (max-width: 749px) {
     0% {
