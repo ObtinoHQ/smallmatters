@@ -17,22 +17,22 @@
         "text_align_x": "flex-end",
         "text_align_y": "center",
         "subtext_align": "center",
-        "image_left": "shopify://shop_images/Forside_Oktober_11e1c751-8641-46d9-aa1b-c56e43639301.png",
+        "image_left": "shopify://shop_images/Forside_04.11.png",
         "image_right": "shopify://shop_images/Forsidebilde_MOBIL_6a4684bc-4088-467d-b6b4-428176104b66.png",
         "desktop_bg": "#c3a096",
         "desktop_text_color": "#ffffff",
-        "image_mobile": "shopify://shop_images/MOBIL_FORSIDE_OKT.png",
+        "image_mobile": "shopify://shop_images/MOBIL_forside.png",
         "mobile_text_color": "#ffffff",
-        "heading": "MYK HØST",
+        "heading": "The winter edit",
         "subtext": "Tidløse gensere i kashmir og merinoull, skapt med omtanke og designet for å vare.",
         "btn_label_1": "Kjøp dame",
         "btn_link_1": "https://smallmatters.no/collections/damekashmir",
         "btn_label_2": "Kjøp herre",
         "btn_link_2": "https://smallmatters.no/collections/herrekashmir",
-        "btn_bg_color": "#d5ccc0",
+        "btn_bg_color": "#303931",
         "btn_hover_bg_color": "#d8cfc4",
         "btn_text_color": "#ffffff",
-        "btn_hover_text_color": "#545453"
+        "btn_hover_text_color": "#303931"
       }
     },
     "featured_collection_banner_Dzqap7": {
