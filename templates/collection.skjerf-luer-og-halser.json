@@ -25,6 +25,14 @@
     "main_collection_custom_RXJTTP": {
       "type": "main-collection-custom",
       "blocks": {
+        "block_tNBtLQ": {
+          "type": "block",
+          "settings": {
+            "label": "Kashmirskjerf",
+            "link": "shopify://collections/kashmirskjerf",
+            "enabled": true
+          }
+        },
         "block_3TBVXV": {
           "type": "block",
           "settings": {
@@ -135,6 +143,7 @@
         }
       },
       "block_order": [
+        "block_tNBtLQ",
         "block_3TBVXV",
         "block_pRaYDB",
         "block_DyN6qQ",
