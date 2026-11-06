@@ -49,14 +49,6 @@
             "enabled": true
           }
         },
-        "block_JRzt7U": {
-          "type": "block",
-          "settings": {
-            "label": "Skjerf, luer og halser",
-            "link": "shopify://collections/kashmirhalser",
-            "enabled": true
-          }
-        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -74,7 +66,6 @@
         "block_tNBtLQ",
         "block_3TBVXV",
         "block_pRaYDB",
-        "block_JRzt7U",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
