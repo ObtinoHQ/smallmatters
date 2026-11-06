@@ -25,11 +25,19 @@
     "main_collection_custom_RXJTTP": {
       "type": "main-collection-custom",
       "blocks": {
-        "block_Rgqp4r": {
+        "block_3TBVXV": {
           "type": "block",
           "settings": {
-            "label": "Kashmirskjerf",
-            "link": "shopify://collections/kashmirskjerf",
+            "label": "Kashmirlue",
+            "link": "shopify://collections/kashmirlue",
+            "enabled": true
+          }
+        },
+        "block_pRaYDB": {
+          "type": "block",
+          "settings": {
+            "label": "Kashmirhals",
+            "link": "shopify://collections/kashmirhals",
             "enabled": true
           }
         },
@@ -127,7 +135,8 @@
         }
       },
       "block_order": [
-        "block_Rgqp4r",
+        "block_3TBVXV",
+        "block_pRaYDB",
         "block_DyN6qQ",
         "block_RGm4he",
         "block_NnrRxb",
