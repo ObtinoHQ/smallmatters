@@ -57,14 +57,6 @@
             "enabled": true
           }
         },
-        "block_nEwRV9": {
-          "type": "block",
-          "settings": {
-            "label": "Limited Edition",
-            "link": "shopify://collections/limited-edition",
-            "enabled": true
-          }
-        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -83,7 +75,6 @@
         "block_3TBVXV",
         "block_pRaYDB",
         "block_JRzt7U",
-        "block_nEwRV9",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
