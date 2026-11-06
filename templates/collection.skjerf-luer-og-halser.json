@@ -49,75 +49,11 @@
             "enabled": true
           }
         },
-        "block_DyN6qQ": {
-          "type": "block",
-          "settings": {
-            "label": "Cardigan",
-            "link": "shopify://collections/cardigan",
-            "enabled": true
-          }
-        },
-        "block_RGm4he": {
-          "type": "block",
-          "settings": {
-            "label": "Zip",
-            "link": "shopify://collections/zip",
-            "enabled": true
-          }
-        },
-        "block_NnrRxb": {
-          "type": "block",
-          "settings": {
-            "label": "Roll Neck",
-            "link": "shopify://collections/roll-neck",
-            "enabled": true
-          }
-        },
-        "block_N8mbVz": {
-          "type": "block",
-          "settings": {
-            "label": "Round Neck",
-            "link": "shopify://collections/round-neck",
-            "enabled": true
-          }
-        },
-        "block_U9VKYq": {
-          "type": "block",
-          "settings": {
-            "label": "Hettegensere",
-            "link": "shopify://collections/hettegensere",
-            "enabled": true
-          }
-        },
-        "block_RHmJxf": {
-          "type": "block",
-          "settings": {
-            "label": "Short Sleeve",
-            "link": "shopify://collections/short-sleeve",
-            "enabled": true
-          }
-        },
         "block_JRzt7U": {
           "type": "block",
           "settings": {
             "label": "Skjerf, luer og halser",
             "link": "shopify://collections/kashmirhalser",
-            "enabled": true
-          }
-        },
-        "block_aRyYhp": {
-          "type": "block",
-          "settings": {
-            "label": "Kashmirpleie",
-            "link": "shopify://collections/kashmirpleie",
-            "enabled": true
-          }
-        },
-        "block_atatTm": {
-          "type": "block",
-          "settings": {
-            "label": "Preloved",
-            "link": "shopify://collections/pre-loved-by-smallmatters",
             "enabled": true
           }
         },
@@ -146,15 +82,7 @@
         "block_tNBtLQ",
         "block_3TBVXV",
         "block_pRaYDB",
-        "block_DyN6qQ",
-        "block_RGm4he",
-        "block_NnrRxb",
-        "block_N8mbVz",
-        "block_U9VKYq",
-        "block_RHmJxf",
         "block_JRzt7U",
-        "block_aRyYhp",
-        "block_atatTm",
         "block_nEwRV9",
         "countdown_promo_TLfCYX"
       ],
