@@ -419,6 +419,27 @@
     "custom_social_feed_YrizYd": {
       "type": "Custom-Social-Feed",
       "blocks": {
+        "image_ge9BWF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Floor_Cardigan_genser_i_brun_og_sand.png",
+            "link": ""
+          }
+        },
+        "image_ejGhbU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cardigan_genser_i_kashmir_og_merinoull_lysebla_og_mellombla.png",
+            "link": ""
+          }
+        },
+        "image_YRVRTR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cardigan_genser_i_kashmir_og_merinoull_i_brun_med_sandstriper_2.png",
+            "link": ""
+          }
+        },
         "image_eMNEEN": {
           "type": "image",
           "settings": {
@@ -477,6 +498,9 @@
         }
       },
       "block_order": [
+        "image_ge9BWF",
+        "image_ejGhbU",
+        "image_YRVRTR",
         "image_eMNEEN",
         "image_qWa8kB",
         "image_3D7tq6",
