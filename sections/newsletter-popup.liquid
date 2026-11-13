@@ -32,15 +32,9 @@
       align-items: center;
       justify-content: center;
       padding: 1.6rem;
-    }
-    .nlp.is-open { display: flex; }
-    .nlp__overlay {
-      display: block !important;
-      position: absolute;
-      inset: 0;
       background: rgba(0, 0, 0, 0.45);
-      animation: nlp-fade 0.25s ease;
     }
+    .nlp.is-open { display: flex; animation: nlp-fade 0.25s ease; }
     .nlp__dialog {
       position: relative;
       width: 100%;
@@ -150,7 +144,7 @@
     @keyframes nlp-fade { from { opacity: 0; } to { opacity: 1; } }
     @keyframes nlp-rise { from { opacity: 0; transform: translateY(2rem); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) {
-      .nlp__overlay, .nlp__dialog { animation: none; }
+      .nlp.is-open, .nlp__dialog { animation: none; }
     }
     @media screen and (max-width: 749px) {
       .nlp { padding: 1.2rem; }
@@ -169,7 +163,6 @@
     data-days="{{ section.settings.days_hidden }}"
     data-design-mode="{{ request.design_mode }}"
   >
-    <div class="nlp__overlay" data-nlp-close></div>
     <div
       class="nlp__dialog"
       role="dialog"
@@ -276,6 +269,10 @@
             this.querySelectorAll('[data-nlp-close]').forEach((el) =>
               el.addEventListener('click', () => this.close(true))
             );
+            // Click on the dimmed background closes it.
+            this.addEventListener('click', (e) => {
+              if (e.target === this) this.close(true);
+            });
             this.addEventListener('keydown', (e) => {
               if (e.key === 'Escape') this.close(true);
               if (e.key === 'Tab') this.trapFocus(e);
