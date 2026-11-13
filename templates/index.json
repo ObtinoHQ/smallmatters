@@ -419,25 +419,11 @@
     "custom_social_feed_YrizYd": {
       "type": "Custom-Social-Feed",
       "blocks": {
-        "image_T3PCBM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sommer_26_4.png",
-            "link": "shopify://products/colette-short-sleeve-denimblaa-lyssand"
-          }
-        },
         "image_eMNEEN": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CC_offwhite_navy_lysebla_og_zip_sand_navy.png",
             "link": "shopify://products/contrast-cardigan-offwhite-navy-lysebla"
-          }
-        },
-        "image_cPGGqK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sommer_26_2.png",
-            "link": "shopify://products/contrast-cardigan-sand-lysegronn-oliven-rosa"
           }
         },
         "image_qWa8kB": {
@@ -461,32 +447,11 @@
             "link": "shopify://products/cardigan-herre-oliven-sand"
           }
         },
-        "image_TipafL": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sommer_26_1.png",
-            "link": "shopify://collections/gilli-round-neck"
-          }
-        },
         "image_JMEeMz": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/August_Cardigan_sand.png",
             "link": "shopify://collections/august-cardigan"
-          }
-        },
-        "image_e6UHbr": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sommer_26_6.png",
-            "link": "shopify://products/contrast-cardigan-lysebla-rosa-offwhite"
-          }
-        },
-        "image_Q4mqFT": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sommer_26_7.png",
-            "link": "shopify://collections/contrast-cardigan"
           }
         },
         "image_NtpEX8": {
@@ -512,16 +477,11 @@
         }
       },
       "block_order": [
-        "image_T3PCBM",
         "image_eMNEEN",
-        "image_cPGGqK",
         "image_qWa8kB",
         "image_3D7tq6",
         "image_bqYTgE",
-        "image_TipafL",
         "image_JMEeMz",
-        "image_e6UHbr",
-        "image_Q4mqFT",
         "image_NtpEX8",
         "image_EawPi9",
         "image_fVbqMN"
