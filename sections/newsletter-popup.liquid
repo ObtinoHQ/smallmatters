@@ -1,0 +1,514 @@
+{%- comment -%}
+  Newsletter pop-up.
+  Everything (picture, texts, colours, timing) is editable in the theme editor:
+  Online Store > Themes > Customize > (left sidebar, top) "Nyhetsbrev pop-up".
+  Signups use Shopify's customer form, so they land in Customers with email
+  marketing consent (and sync to Mailchimp through the Mailchimp app).
+{%- endcomment -%}
+
+{%- liquid
+  assign show_here = true
+  if section.settings.front_page_only and template.name != 'index'
+    assign show_here = false
+  endif
+  if template.name == 'password' or template.name == 'gift_card'
+    assign show_here = false
+  endif
+-%}
+
+{%- if section.settings.enabled and show_here -%}
+  <style>
+    #NewsletterPopup-{{ section.id }} {
+      --nlp-bg: {{ section.settings.background_color }};
+      --nlp-text: {{ section.settings.text_color }};
+      --nlp-btn-bg: {{ section.settings.button_color }};
+      --nlp-btn-text: {{ section.settings.button_text_color }};
+    }
+    .nlp {
+      position: fixed;
+      inset: 0;
+      z-index: 1001;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.6rem;
+    }
+    .nlp.is-open { display: flex; }
+    .nlp__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      animation: nlp-fade 0.25s ease;
+    }
+    .nlp__dialog {
+      position: relative;
+      width: 100%;
+      max-width: 42rem;
+      max-height: calc(100vh - 3.2rem);
+      max-height: calc(100dvh - 3.2rem);
+      overflow-y: auto;
+      background: var(--nlp-bg);
+      color: var(--nlp-text);
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+      animation: nlp-rise 0.3s ease;
+    }
+    .nlp__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: {{ section.settings.image_ratio }};
+      object-fit: cover;
+    }
+    .nlp__body {
+      padding: 3.2rem 3.2rem 3.6rem;
+      text-align: center;
+    }
+    .nlp__heading {
+      margin: 0 0 2.4rem;
+      font-family: var(--font-body-family);
+      font-size: 1.8rem;
+      line-height: 1.4;
+      font-weight: 400;
+      letter-spacing: 0.02rem;
+      color: var(--nlp-text);
+    }
+    .nlp__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+    .nlp__input,
+    .nlp__button {
+      width: 100%;
+      min-height: 5rem;
+      padding: 1rem 1.6rem;
+      font-family: var(--font-body-family);
+      font-size: 1.8rem;
+      border-radius: 0;
+      text-align: center;
+    }
+    .nlp__input {
+      background: transparent;
+      color: var(--nlp-text);
+      border: 1px solid #fff;
+      outline-offset: 2px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .nlp__input::placeholder { color: var(--nlp-text); opacity: 0.85; }
+    .nlp__input:focus-visible { outline: 2px solid var(--nlp-text); }
+    .nlp__button {
+      background: var(--nlp-btn-bg);
+      color: var(--nlp-btn-text);
+      border: 1px solid #fff;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    .nlp__button:hover { opacity: 0.85; }
+    .nlp__message { margin: 0 0 1.6rem; font-size: 1.5rem; line-height: 1.5; }
+    .nlp__message--error { color: #8b0000; }
+    .nlp__code {
+      display: inline-block;
+      margin: 0.4rem 0 1.6rem;
+      padding: 0.8rem 1.6rem;
+      border: 1px dashed currentColor;
+      font-size: 2rem;
+      letter-spacing: 0.15rem;
+      font-weight: 600;
+    }
+    .nlp__consent {
+      margin: 2rem auto 0;
+      max-width: 34rem;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+    .nlp__consent a { color: inherit; }
+    .nlp__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      cursor: pointer;
+    }
+    .nlp__close svg { width: 1.6rem; height: 1.6rem; }
+    .nlp__close:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+    body.nlp-locked { overflow: hidden; }
+    @keyframes nlp-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes nlp-rise { from { opacity: 0; transform: translateY(2rem); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .nlp__overlay, .nlp__dialog { animation: none; }
+    }
+    @media screen and (max-width: 749px) {
+      .nlp { padding: 1.2rem; }
+      .nlp__body { padding: 2.4rem 2rem 2.8rem; }
+      .nlp__heading { font-size: 1.6rem; margin-bottom: 2rem; }
+      .nlp__input, .nlp__button { min-height: 4.6rem; font-size: 1.6rem; }
+      .nlp__image { max-height: 38vh; }
+    }
+  </style>
+
+  <newsletter-popup
+    id="NewsletterPopup-{{ section.id }}"
+    class="nlp"
+    data-section-id="{{ section.id }}"
+    data-delay="{{ section.settings.delay_seconds }}"
+    data-days="{{ section.settings.days_hidden }}"
+    data-design-mode="{{ request.design_mode }}"
+  >
+    <div class="nlp__overlay" data-nlp-close></div>
+    <div
+      class="nlp__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="NewsletterPopupHeading-{{ section.id }}"
+      tabindex="-1"
+    >
+      <button type="button" class="nlp__close" data-nlp-close aria-label="{{ 'accessibility.close' | t }}">
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" fill="none"/>
+        </svg>
+      </button>
+
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 900
+          | image_tag:
+            class: 'nlp__image',
+            loading: 'lazy',
+            widths: '420, 640, 900',
+            sizes: '(min-width: 750px) 420px, 100vw',
+            alt: section.settings.image.alt
+        }}
+      {%- else -%}
+        <img
+          class="nlp__image"
+          src="{{ 'newsletter-popup-default.jpg' | asset_url }}"
+          alt=""
+          width="709"
+          height="591"
+          loading="lazy"
+        >
+      {%- endif -%}
+
+      <div class="nlp__body">
+        {%- form 'customer', id: 'NewsletterPopupForm', class: 'nlp__form-wrapper' -%}
+          {%- if form.posted_successfully? -%}
+            <h2 class="nlp__heading" id="NewsletterPopupHeading-{{ section.id }}" tabindex="-1">
+              {{- section.settings.success_heading | escape | newline_to_br -}}
+            </h2>
+            {%- if section.settings.success_text != blank -%}
+              <div class="nlp__message">{{ section.settings.success_text }}</div>
+            {%- endif -%}
+            {%- if section.settings.discount_code != blank -%}
+              <div class="nlp__code">{{ section.settings.discount_code | escape }}</div>
+            {%- endif -%}
+          {%- else -%}
+            <h2 class="nlp__heading" id="NewsletterPopupHeading-{{ section.id }}">
+              {{- section.settings.heading | escape | newline_to_br -}}
+            </h2>
+            {%- if form.errors -%}
+              <p class="nlp__message nlp__message--error" role="alert">
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </p>
+            {%- endif -%}
+            <div class="nlp__form">
+              <input type="hidden" name="contact[tags]" value="newsletter,popup">
+              <label class="visually-hidden" for="NewsletterPopupEmail-{{ section.id }}">
+                {{- section.settings.placeholder | escape -}}
+              </label>
+              <input
+                id="NewsletterPopupEmail-{{ section.id }}"
+                class="nlp__input"
+                type="email"
+                name="contact[email]"
+                value="{{ form.email }}"
+                placeholder="{{ section.settings.placeholder | escape }}"
+                autocomplete="email"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+                required
+              >
+              <button type="submit" class="nlp__button" name="commit">
+                {{- section.settings.button_label | escape -}}
+              </button>
+            </div>
+            {%- if section.settings.consent_text != blank -%}
+              <div class="nlp__consent">{{ section.settings.consent_text }}</div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </newsletter-popup>
+
+  <script>
+    if (!customElements.get('newsletter-popup')) {
+      customElements.define(
+        'newsletter-popup',
+        class NewsletterPopup extends HTMLElement {
+          connectedCallback() {
+            this.storageKey = 'sm-newsletter-popup-closed';
+            this.dialog = this.querySelector('.nlp__dialog');
+            this.designMode = this.dataset.designMode === 'true';
+            this.querySelectorAll('[data-nlp-close]').forEach((el) =>
+              el.addEventListener('click', () => this.close(true))
+            );
+            this.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') this.close(true);
+              if (e.key === 'Tab') this.trapFocus(e);
+            });
+            const form = this.querySelector('form');
+            if (form) form.addEventListener('submit', () => this.remember());
+
+            // Came back after submitting this form: show the thank-you / error state.
+            if (window.location.hash === '#NewsletterPopupForm') {
+              this.open();
+              return;
+            }
+
+            if (this.designMode) {
+              document.addEventListener('shopify:section:select', (e) => {
+                if (e.detail.sectionId === this.dataset.sectionId) this.open();
+              });
+              document.addEventListener('shopify:section:deselect', (e) => {
+                if (e.detail.sectionId === this.dataset.sectionId) this.close(false);
+              });
+              return;
+            }
+
+            if (this.isHidden()) return;
+            const delay = Math.max(0, parseInt(this.dataset.delay, 10) || 0) * 1000;
+            this.timer = setTimeout(() => this.open(), delay);
+          }
+
+          isHidden() {
+            try {
+              const until = parseInt(localStorage.getItem(this.storageKey), 10);
+              return until && Date.now() < until;
+            } catch (e) {
+              return false;
+            }
+          }
+
+          remember() {
+            if (this.designMode) return;
+            const days = parseInt(this.dataset.days, 10) || 365;
+            try {
+              localStorage.setItem(this.storageKey, String(Date.now() + days * 86400000));
+            } catch (e) {}
+          }
+
+          open() {
+            this.lastFocus = document.activeElement;
+            this.classList.add('is-open');
+            document.body.classList.add('nlp-locked');
+            const first = this.querySelector('.nlp__input') || this.dialog;
+            requestAnimationFrame(() => {
+              // Avoid popping the mobile keyboard straight away.
+              if (window.matchMedia('(min-width: 750px)').matches) first.focus({ preventScroll: true });
+              else this.dialog.focus({ preventScroll: true });
+            });
+          }
+
+          close(remember) {
+            if (!this.classList.contains('is-open')) return;
+            this.classList.remove('is-open');
+            document.body.classList.remove('nlp-locked');
+            if (remember) this.remember();
+            if (window.location.hash === '#NewsletterPopupForm') {
+              history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+            if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus({ preventScroll: true });
+          }
+
+          trapFocus(e) {
+            const items = Array.from(
+              this.dialog.querySelectorAll('button, [href], input:not([type="hidden"]), [tabindex]:not([tabindex="-1"])')
+            ).filter((el) => !el.disabled && el.offsetParent !== null);
+            if (!items.length) return;
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Nyhetsbrev pop-up",
+  "tag": "div",
+  "class": "section-newsletter-popup",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Vis pop-up",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "front_page_only",
+      "label": "Vis kun på forsiden",
+      "info": "Av: vises på den første siden kunden lander på (også produktsider fra annonser).",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Bilde"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bilde",
+      "info": "Bruk et liggende bilde, ca. 1200 × 1000 px."
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Bildeformat",
+      "default": "6 / 5",
+      "options": [
+        { "value": "1 / 1", "label": "Kvadrat" },
+        { "value": "6 / 5", "label": "Litt liggende" },
+        { "value": "3 / 2", "label": "Liggende" },
+        { "value": "4 / 5", "label": "Stående" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Tekst"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Bli en del av Smallmatters verden og få 10 % på din første bestilling"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Tekst i e-postfeltet",
+      "default": "Skriv din epost her"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knappetekst",
+      "default": "Abonner"
+    },
+    {
+      "type": "richtext",
+      "id": "consent_text",
+      "label": "Liten tekst under knappen",
+      "default": "<p>Ved å melde deg på samtykker du til at vi kan sende deg e-post med nyheter og tilbud. Du kan når som helst melde deg av.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Etter påmelding"
+    },
+    {
+      "type": "textarea",
+      "id": "success_heading",
+      "label": "Takketekst",
+      "default": "Takk! Du er nå en del av Smallmatters verden."
+    },
+    {
+      "type": "richtext",
+      "id": "success_text",
+      "label": "Tekst under takken",
+      "default": "<p>Bruk koden under i kassen for 10 % på din første bestilling.</p>"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Rabattkode som vises",
+      "info": "Koden må finnes under Rabatter i Shopify. La feltet stå tomt hvis koden sendes på e-post i stedet."
+    },
+    {
+      "type": "header",
+      "content": "Farger"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Bakgrunn",
+      "default": "#B6D9FF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Tekst",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Knapp",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Knappetekst",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Når den vises"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "label": "Vent før den vises",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "days_hidden",
+      "label": "Vis igjen for samme kunde etter",
+      "info": "Gjelder når kunden har lukket pop-upen eller meldt seg på.",
+      "default": "90",
+      "options": [
+        { "value": "7", "label": "1 uke" },
+        { "value": "30", "label": "1 måned" },
+        { "value": "90", "label": "3 måneder" },
+        { "value": "365", "label": "1 år" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nyhetsbrev pop-up"
+    }
+  ]
+}
+{% endschema %}
