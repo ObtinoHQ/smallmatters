@@ -433,6 +433,13 @@
             "link": "https://smallmatters.no/collections/contrast-cardigan"
           }
         },
+        "image_bqYTgE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Thomas_cardigan_oliven_med_jakke.png",
+            "link": "shopify://products/cardigan-herre-oliven-sand"
+          }
+        },
         "image_YRVRTR": {
           "type": "image",
           "settings": {
@@ -459,13 +466,6 @@
           "settings": {
             "image": "shopify://shop_images/Spoonie_cardigan_genser_i_kashmir_sand.png",
             "link": "shopify://products/spoonie-cardigan-sand-lyssand"
-          }
-        },
-        "image_bqYTgE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Thomas_cardigan_oliven_med_jakke.png",
-            "link": "shopify://products/cardigan-herre-oliven-sand"
           }
         },
         "image_JMEeMz": {
@@ -500,11 +500,11 @@
       "block_order": [
         "image_ge9BWF",
         "image_ejGhbU",
+        "image_bqYTgE",
         "image_YRVRTR",
         "image_eMNEEN",
         "image_qWa8kB",
         "image_3D7tq6",
-        "image_bqYTgE",
         "image_JMEeMz",
         "image_NtpEX8",
         "image_EawPi9",
