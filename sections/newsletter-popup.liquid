@@ -43,7 +43,7 @@
     .nlp__dialog {
       position: relative;
       width: 100%;
-      max-width: 42rem;
+      max-width: 46rem;
       max-height: calc(100vh - 3.2rem);
       max-height: calc(100dvh - 3.2rem);
       overflow-y: auto;
@@ -55,6 +55,7 @@
     .nlp__image {
       display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: {{ section.settings.image_ratio }};
       object-fit: cover;
     }
@@ -262,9 +263,15 @@
         'newsletter-popup',
         class NewsletterPopup extends HTMLElement {
           connectedCallback() {
+            if (this.initialized) return;
+            this.initialized = true;
+            this.designMode = this.dataset.designMode === 'true';
+            // Live outside the sticky header so it can cover the whole page.
+            if (!this.designMode && this.parentElement !== document.body) {
+              document.body.appendChild(this);
+            }
             this.storageKey = 'sm-newsletter-popup-closed';
             this.dialog = this.querySelector('.nlp__dialog');
-            this.designMode = this.dataset.designMode === 'true';
             this.querySelectorAll('[data-nlp-close]').forEach((el) =>
               el.addEventListener('click', () => this.close(true))
             );
