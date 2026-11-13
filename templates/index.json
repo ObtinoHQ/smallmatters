@@ -440,6 +440,13 @@
             "link": "shopify://products/cardigan-herre-oliven-sand"
           }
         },
+        "image_EawPi9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cardigan_genser_i_kashmir_og_merinoull_oliven_med_offwhite.png",
+            "link": "https://smallmatters.no/collections/contrast-cardigan"
+          }
+        },
         "image_YRVRTR": {
           "type": "image",
           "settings": {
@@ -468,6 +475,13 @@
             "link": "shopify://products/spoonie-cardigan-sand-lyssand"
           }
         },
+        "image_fVbqMN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Gilli_round_neck_denim_bla_kashmir_kopi.png",
+            "link": "https://smallmatters.no/collections/round-neck"
+          }
+        },
         "image_JMEeMz": {
           "type": "image",
           "settings": {
@@ -481,34 +495,20 @@
             "image": "shopify://shop_images/CC_sand_rosa_og_zip_sand_rosa.png",
             "link": "shopify://products/cardigan-sand-lysrosa"
           }
-        },
-        "image_EawPi9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Cardigan_genser_i_kashmir_og_merinoull_oliven_med_offwhite.png",
-            "link": "https://smallmatters.no/collections/contrast-cardigan"
-          }
-        },
-        "image_fVbqMN": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Gilli_round_neck_denim_bla_kashmir_kopi.png",
-            "link": "https://smallmatters.no/collections/round-neck"
-          }
         }
       },
       "block_order": [
         "image_ge9BWF",
         "image_ejGhbU",
         "image_bqYTgE",
+        "image_EawPi9",
         "image_YRVRTR",
         "image_eMNEEN",
         "image_qWa8kB",
         "image_3D7tq6",
+        "image_fVbqMN",
         "image_JMEeMz",
-        "image_NtpEX8",
-        "image_EawPi9",
-        "image_fVbqMN"
+        "image_NtpEX8"
       ],
       "name": "Custom Social Feed",
       "settings": {
