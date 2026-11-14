@@ -25,6 +25,14 @@
     "main_collection_custom_RXJTTP": {
       "type": "main-collection-custom",
       "blocks": {
+        "block_DmWpY8": {
+          "type": "block",
+          "settings": {
+            "label": "Cabin cardigan",
+            "link": "shopify://collections/cabin-cardigan",
+            "enabled": true
+          }
+        },
         "block_NnrRxb": {
           "type": "block",
           "settings": {
@@ -95,6 +103,7 @@
         }
       },
       "block_order": [
+        "block_DmWpY8",
         "block_NnrRxb",
         "block_ijhLqB",
         "block_N8mbVz",
