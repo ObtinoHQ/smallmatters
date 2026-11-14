@@ -25,14 +25,6 @@
     "main_collection_custom_RXJTTP": {
       "type": "main-collection-custom",
       "blocks": {
-        "block_DmWpY8": {
-          "type": "block",
-          "settings": {
-            "label": "Cabin cardigan",
-            "link": "shopify://collections/cabin-cardigan",
-            "enabled": true
-          }
-        },
         "block_NnrRxb": {
           "type": "block",
           "settings": {
@@ -73,6 +65,14 @@
             "enabled": true
           }
         },
+        "block_DmWpY8": {
+          "type": "block",
+          "settings": {
+            "label": "Cabin cardigan",
+            "link": "shopify://collections/cabin-cardigan",
+            "enabled": true
+          }
+        },
         "block_RHmJxf": {
           "type": "block",
           "settings": {
@@ -103,12 +103,12 @@
         }
       },
       "block_order": [
-        "block_DmWpY8",
         "block_NnrRxb",
         "block_ijhLqB",
         "block_N8mbVz",
         "block_DyN6qQ",
         "block_K7j77V",
+        "block_DmWpY8",
         "block_RHmJxf",
         "block_6mXq4Y",
         "countdown_promo_TLfCYX"
