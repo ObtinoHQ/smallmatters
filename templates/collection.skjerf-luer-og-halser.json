@@ -49,6 +49,14 @@
             "enabled": true
           }
         },
+        "block_6wd6EL": {
+          "type": "block",
+          "settings": {
+            "label": "Leggings",
+            "link": "shopify://collections/leggings",
+            "enabled": true
+          }
+        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -66,6 +74,7 @@
         "block_tNBtLQ",
         "block_3TBVXV",
         "block_pRaYDB",
+        "block_6wd6EL",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
