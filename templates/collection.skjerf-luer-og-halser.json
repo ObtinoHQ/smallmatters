@@ -57,6 +57,14 @@
             "enabled": true
           }
         },
+        "block_XQDW9i": {
+          "type": "block",
+          "settings": {
+            "label": "Nikkersstrømper",
+            "link": "shopify://collections/up-to-knee-socks",
+            "enabled": true
+          }
+        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -75,6 +83,7 @@
         "block_3TBVXV",
         "block_pRaYDB",
         "block_6wd6EL",
+        "block_XQDW9i",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
