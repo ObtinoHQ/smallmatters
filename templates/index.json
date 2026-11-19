@@ -13,15 +13,15 @@
       "type": "Hero-Banner",
       "name": "Hero Banner",
       "settings": {
-        "layout_mode": "single",
-        "text_align_x": "flex-end",
+        "layout_mode": "split",
+        "text_align_x": "center",
         "text_align_y": "center",
         "subtext_align": "center",
-        "image_left": "shopify://shop_images/Forside_04.11.png",
-        "image_right": "shopify://shop_images/Forsidebilde_MOBIL_6a4684bc-4088-467d-b6b4-428176104b66.png",
-        "desktop_bg": "#c3a096",
-        "desktop_text_color": "#303931",
-        "image_mobile": "shopify://shop_images/MOBIL_forside.png",
+        "image_left": "shopify://shop_images/Contrast_cardigan_rosa_og_offwhite.png",
+        "image_right": "shopify://shop_images/Thomas_cardigan_herre_-_morkerosa_sand1_kopi.png",
+        "desktop_bg": "#D8979F",
+        "desktop_text_color": "#FFFFFF",
+        "image_mobile": "shopify://shop_images/Contrast_cardigan_rosa_og_offwhite.png",
         "mobile_text_color": "#ffffff",
         "heading": "The winter edit",
         "subtext": "Tidløse gensere i kashmir og merinoull, skapt med omtanke og designet for å vare.",
@@ -29,10 +29,10 @@
         "btn_link_1": "https://smallmatters.no/collections/damekashmir",
         "btn_label_2": "Kjøp herre",
         "btn_link_2": "https://smallmatters.no/collections/herrekashmir",
-        "btn_bg_color": "#303931",
-        "btn_hover_bg_color": "#d8cfc4",
-        "btn_text_color": "#ffffff",
-        "btn_hover_text_color": "#303931"
+        "btn_bg_color": "#FFFFFF",
+        "btn_hover_bg_color": "#F5E9CF",
+        "btn_text_color": "#D8979F",
+        "btn_hover_text_color": "#D8979F"
       }
     },
     "featured_collection_banner_Dzqap7": {
