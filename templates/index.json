@@ -19,8 +19,8 @@
         "subtext_align": "center",
         "image_left": "shopify://shop_images/Contrast_cardigan_rosa_og_offwhite.png",
         "image_right": "shopify://shop_images/Thomas_cardigan_herre_-_morkerosa_sand1_kopi_81dfc160-b452-4a16-aecc-835c719adbea.png",
-        "desktop_bg": "#8E7C6B",
-        "desktop_text_color": "#FFFFFF",
+        "desktop_bg": "#D1C7C3",
+        "desktop_text_color": "#ffffff",
         "image_mobile": "shopify://shop_images/Contrast_cardigan_rosa_og_offwhite.png",
         "mobile_text_color": "#ffffff",
         "heading": "The winter edit",
@@ -29,10 +29,10 @@
         "btn_link_1": "https://smallmatters.no/collections/damekashmir",
         "btn_label_2": "Kjøp herre",
         "btn_link_2": "https://smallmatters.no/collections/herrekashmir",
-        "btn_bg_color": "#FFFFFF",
-        "btn_hover_bg_color": "#D1C7C3",
-        "btn_text_color": "#D8979F",
-        "btn_hover_text_color": "#D8979F"
+        "btn_bg_color": "#ffffff",
+        "btn_hover_bg_color": "#d1c7c3",
+        "btn_text_color": "#d8979f",
+        "btn_hover_text_color": "#d8979f"
       }
     },
     "featured_collection_banner_Dzqap7": {
