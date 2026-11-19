@@ -208,6 +208,9 @@
               <div class="nlp__message">{{ section.settings.success_text }}</div>
             {%- endif -%}
             {%- if section.settings.discount_code != blank -%}
+              {%- if section.settings.code_text != blank -%}
+                <div class="nlp__message">{{ section.settings.code_text }}</div>
+              {%- endif -%}
               <div class="nlp__code">{{ section.settings.discount_code | escape }}</div>
             {%- endif -%}
           {%- else -%}
@@ -446,13 +449,20 @@
       "type": "richtext",
       "id": "success_text",
       "label": "Tekst under takken",
-      "default": "<p>Bruk koden under i kassen for 10 % på din første bestilling.</p>"
+      "default": "<p>Sjekk innboksen din, vi har sendt deg koden for 10 % på din første bestilling.</p>"
     },
     {
       "type": "text",
       "id": "discount_code",
-      "label": "Rabattkode som vises",
-      "info": "Koden må finnes under Rabatter i Shopify. La feltet stå tomt hvis koden sendes på e-post i stedet."
+      "label": "Rabattkode som vises (valgfritt)",
+      "info": "La stå tomt når koden sendes på e-post fra Mailchimp. Fylles den ut, vises koden i pop-upen etter påmelding."
+    },
+    {
+      "type": "richtext",
+      "id": "code_text",
+      "label": "Tekst over rabattkoden",
+      "info": "Vises bare når en rabattkode er fylt ut.",
+      "default": "<p>Bruk koden under i kassen for 10 % på din første bestilling.</p>"
     },
     {
       "type": "header",
