@@ -25,6 +25,14 @@
     "main_collection_custom_RXJTTP": {
       "type": "main-collection-custom",
       "blocks": {
+        "block_XQDW9i": {
+          "type": "block",
+          "settings": {
+            "label": "Nikkersstrømper",
+            "link": "shopify://collections/nikkersstromper",
+            "enabled": true
+          }
+        },
         "block_tNBtLQ": {
           "type": "block",
           "settings": {
@@ -57,14 +65,6 @@
             "enabled": true
           }
         },
-        "block_XQDW9i": {
-          "type": "block",
-          "settings": {
-            "label": "Nikkersstrømper",
-            "link": "shopify://collections/nikkersstromper",
-            "enabled": true
-          }
-        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -79,11 +79,11 @@
         }
       },
       "block_order": [
+        "block_XQDW9i",
         "block_tNBtLQ",
         "block_3TBVXV",
         "block_pRaYDB",
         "block_6wd6EL",
-        "block_XQDW9i",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
