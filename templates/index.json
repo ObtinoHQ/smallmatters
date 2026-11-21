@@ -14,7 +14,7 @@
       "name": "Hero Banner",
       "settings": {
         "layout_mode": "split",
-        "text_align_x": "flex-end",
+        "text_align_x": "center",
         "text_align_y": "center",
         "subtext_align": "center",
         "image_left": "shopify://shop_images/IMG_8354.jpg",
