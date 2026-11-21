@@ -13,13 +13,13 @@
       "type": "Hero-Banner",
       "name": "Hero Banner",
       "settings": {
-        "layout_mode": "single",
+        "layout_mode": "split",
         "text_align_x": "flex-end",
         "text_align_y": "center",
         "subtext_align": "center",
-        "image_left": "shopify://shop_images/Forsidebilde_fra_21_november.png",
-        "image_right": "shopify://shop_images/Thomas_cardigan_herre_-_morkerosa_sand1_kopi_81dfc160-b452-4a16-aecc-835c719adbea.png",
-        "desktop_bg": "#8e7c6b",
+        "image_left": "shopify://shop_images/IMG_8354.jpg",
+        "image_right": "shopify://shop_images/Forside_mobil_21_nov.png",
+        "desktop_bg": "#7A95BF",
         "desktop_text_color": "#ffffff",
         "image_mobile": "shopify://shop_images/Forside_mobil_21_nov.png",
         "mobile_text_color": "#ffffff",
@@ -31,8 +31,8 @@
         "btn_link_2": "https://smallmatters.no/collections/herrekashmir",
         "btn_bg_color": "#ffffff",
         "btn_hover_bg_color": "#d1c7c3",
-        "btn_text_color": "#7A95BF",
-        "btn_hover_text_color": "#7A95BF"
+        "btn_text_color": "#7a95bf",
+        "btn_hover_text_color": "#7a95bf"
       }
     },
     "featured_collection_banner_Dzqap7": {
