@@ -81,14 +81,6 @@
             "enabled": true
           }
         },
-        "block_6mXq4Y": {
-          "type": "block",
-          "settings": {
-            "label": "Frye Cardigan",
-            "link": "shopify://collections/frye",
-            "enabled": true
-          }
-        },
         "countdown_promo_TLfCYX": {
           "type": "countdown_promo",
           "name": "Trustpilot Card",
@@ -110,7 +102,6 @@
         "block_K7j77V",
         "block_DmWpY8",
         "block_RHmJxf",
-        "block_6mXq4Y",
         "countdown_promo_TLfCYX"
       ],
       "name": "Custom Collection",
